@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import ParticlesBg  from "particles-bg";
+import ParticlesBg from "particles-bg";
+import icon from "./icon";
 
 class Header extends Component {
+   
   render() {
 
     if(this.props.data){
@@ -9,11 +11,38 @@ class Header extends Component {
        var github = this.props.data.github;
       var name = this.props.data.name;
       var description= this.props.data.description;
-      var city= this.props.data.address.city;
       var networks= this.props.data.social.map(function(network){
         return <li key={network.name}><a href={network.url}><i className={network.className}></i></a></li>
       })
+      const particles = this.getBgParticles();
+      return <React.Fragment>{particles}</React.Fragment>;
     }
+
+    let config = {
+      num: [4, 7],
+      rps: 0.4,
+      radius: [5, 40],
+      life: [1.5, 3],
+      v: [2, 3],
+      tha: [-40, 40],
+      body: icon, // Whether to render pictures
+       //rotate: [0, 20],
+      alpha: [0.6, 0],
+      scale: [1, 0.1],
+      position: "center", // all or center or {x:1,y:1,width:100,height:100}
+      //color: ["#fff826"],
+      cross: "dead", // cross or bround
+      random: 15,  // or null,
+      g: 0,    // gravity
+      // f: [2, -1], // force
+      /*onParticleUpdate: (ctx, particle) => {
+          ctx.beginPath();
+          ctx.rect(particle.p.x, particle.p.y, particle.radius * 2, particle.radius * 2);
+          ctx.fillStyle = particle.color;
+          ctx.fill();
+          ctx.closePath();
+      }*/
+    };
 
     return (
       <header id="home">
@@ -23,15 +52,14 @@ class Header extends Component {
 
          <ul id="nav" className="nav">
             <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
-	         <li><a className="smoothscroll" href="#start">Start</a></li>
             <li><a className="smoothscroll" href="#about">About</a></li>
             <li><a className="smoothscroll" href="#contact">Contact</a></li>
          </ul>
       </nav>
-
-      <div className="row banner">
       
+      <div className="row banner">
          <div className="banner-text">
+         <ParticlesBg type="custom" config={config} bg={"https://www.pikpng.com/pngl/b/587-5874860_-pink-daisy-flower-clipart-views-album-clip.png"}/>
             <h1 className="responsive-headline">{name}</h1>
             <h3>{description}Welcome to Bee Blooms, an app that takes in location data and suggests pollinator-friendly plants that can be planted around you!</h3>
             <hr />
