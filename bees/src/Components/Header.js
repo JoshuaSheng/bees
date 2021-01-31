@@ -4,7 +4,7 @@ import icon from "./icon";
 import "./style.css";
 
 class Header extends Component {
-   
+
   render() {
 
     if(this.props.data){
@@ -49,7 +49,7 @@ class Header extends Component {
             <li><a className="smoothscroll" href="#contact">Contact</a></li>
          </ul>
       </nav>
-      
+
       <div className="row banner">
          <div className="banner-text">
          <ParticlesBg type="custom" config={config} bg={true}/>
