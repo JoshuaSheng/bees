@@ -52,10 +52,7 @@ def get_flowering(plants):
     for flower in flower_list:
         for plant in plants:
             if flower in plant:
-                print(flower, plant)
                 flowering_plants.append(flower)
                 break;
             
     return flowering_plants
-
-print(get_flowering(get_local_plants("43.7687", "-79.4109")))
