@@ -1,48 +1,13 @@
-import './App.css';
 import React, { Component } from 'react';
 import ReactGA from 'react-ga';
+import $ from 'jquery';
+import './App.css';
 import Header from './Components/Header';
 import Footer from './Components/Footer';
 import About from './Components/About';
-
-class App extends Component{
-
-  constructor(props){
-    super(props);
-    this.state = {
-      foo: 'bar',
-      resumeData: {}
-    };
-
-    ReactGA.initialize('UA-110570651-1');
-    ReactGA.pageview(window.location.pathname);
-
-  }
-
-  reader (){
-    return (
-      <div className="App">
-        <Header data={this.state.resumeData.main}/>
-        <About data={this.state.resumeData.main}/>
-        <Footer data={this.state.resumeData.main}/>
-      </div>
-    );
-  }
-
-}
-
-export default App;
-
-/*import React, { Component } from 'react';
-import ReactGA from 'react-ga';
-import $ from 'jquery';
-import './react-nice-resume/src/Components/App.css';
-import Header from './react-nice-resume/src/Components/Header';
-import Footer from './react-nice-resume/src/Components/Footer';
-import About from './react-nice-resume/src/Components/About';
-import Resume from './react-nice-resume/src/Components/Resume';
-import Contact from './react-nice-resume/src/Components/Contact';
-import Portfolio from './react-nice-resume/src/Components/Portfolio';
+import Resume from './Components/Resume';
+import Contact from './Components/Contact';
+import Portfolio from './Components/Portfolio';
 
 class App extends Component {
 
@@ -91,4 +56,4 @@ class App extends Component {
   }
 }
 
-export default App;*/
+export default App;
