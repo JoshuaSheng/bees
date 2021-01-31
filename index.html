@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+	Awesome Responsive Template
+	templatestock.co
+-->
+<html>
+<head>
+	<title>Awesome Responsive Template | Template Stock</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+	<!-- Goggle Font -->
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+
+	<!-- Font Css -->
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Animation Css -->
+	<link rel="stylesheet" href="css/animate.css">
+
+
+</head>
+<body>
+<!-- Header -->
+<div class="header-div">
+
+<div class="container wow bounceInDown" data-wow-duration="5s">
+	<div class="row">
+		<div class="col-md-offset-2 col-md-8 text-center slide-text">
+			<h1>Bee Blooms</h1>
+      <hr>
+      <h4>Welcome to Bee Blooms, an app that takes in location data and suggests pollinator-friendly plants that can be planted around you!</h4>
+			<button class="btn btn-link-1 scroll-link" onclick="buttonpress()">Get flowers</button>
+		</div><!-- End col-md-8-->
+		<div class="col-md-offset-2"></div><!-- End col-md-offset-2 -->
+	</div><!-- End Row -->
+</div><!-- End Contanier -->
+
+</div><!-- End header-div -->
+
+<!-- Feature -->
+<div class="table">
+  <table id="flowers">
+    <tr>
+    </tr>
+  </table>
+</div>
+
+<script>
+var options = {
+  enableHighAccuracy: true,
+  timeout: 5000,
+  maximumAge: 0
+};
+var lon = 1
+var lat = 1
+function success(pos) {
+  var crd = pos.coords;
+
+  console.log('Your current position is:');
+  lon = crd.longitude;
+  lat = crd.latitude;
+  console.log(`Latitude : ${crd.latitude}`);
+  console.log(`Longitude: ${crd.longitude}`);
+  console.log(`More or less ${crd.accuracy} meters.`);
+  loadXMLDoc(lon,lat);
+  return 1
+}
+
+function error(err) {
+  window.alert("press the accept button to use this");
+}
+function buttonpress()
+{
+	navigator.geolocation.getCurrentPosition(success, error, options);
+
+}
+function loadXMLDoc(a1, a2) {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      const table = document.querySelector("#flowers")
+
+      const data = this.responseText.split(",")
+      console.log(data)
+      for (let i = 0; i < data.length; i++) {
+        let row = table.insertRow(0)
+        let rowData = row.insertCell(0);
+        rowData.innerHTML = data[i].replaceAll('"', "").replaceAll(']', "").replaceAll('[', "");
+      }
+      let header = table.createTHead();
+      header.innerHTML = "Flowers"
+    }
+  };
+
+  var output = "https://cors-anywhere.herokuapp.com/https://beeees.herokuapp.com/getmsg/?long=";
+  output = output.concat(lon.toString());
+  output = output.concat("&lat=");
+  output = output.concat(lat.toString())
+  console.log(output)
+  xhttp.open("GET", output, true);
+  xhttp.send();
+}
+
+</script>
+<script type="text/javascript" src="js/jquery-main.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+
+</body>
+</html>
