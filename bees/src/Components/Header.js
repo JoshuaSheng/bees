@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ParticlesBg from "particles-bg";
 import icon from "./icon";
+import "./style.css";
 
 class Header extends Component {
    
@@ -27,21 +28,13 @@ class Header extends Component {
       tha: [-40, 40],
       body: icon, // Whether to render pictures
        //rotate: [0, 20],
-      alpha: [0.6, 0],
+      alpha: [0.8, 0],
       scale: [1, 0.1],
       position: "center", // all or center or {x:1,y:1,width:100,height:100}
       //color: ["#fff826"],
       cross: "dead", // cross or bround
       random: 15,  // or null,
       g: 0,    // gravity
-      // f: [2, -1], // force
-      /*onParticleUpdate: (ctx, particle) => {
-          ctx.beginPath();
-          ctx.rect(particle.p.x, particle.p.y, particle.radius * 2, particle.radius * 2);
-          ctx.fillStyle = particle.color;
-          ctx.fill();
-          ctx.closePath();
-      }*/
     };
 
     return (
