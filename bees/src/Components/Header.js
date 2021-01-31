@@ -52,7 +52,7 @@ class Header extends Component {
 
       <div className="row banner">
          <div className="banner-text">
-         <ParticlesBg type="custom" config={config} bg={"https://www.pikpng.com/pngl/b/587-5874860_-pink-daisy-flower-clipart-views-album-clip.png"}/>
+         <ParticlesBg type="custom" config={config} bg={true}/>
             <h1 className="responsive-headline">{name}</h1>
             <h3>{description}Welcome to Bee Blooms, an app that takes in location data and suggests pollinator-friendly plants that can be planted around you!</h3>
             <hr />
