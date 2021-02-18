@@ -22,9 +22,9 @@ plant more flowering plants, and slowly help the bees build their populations ba
 This app interacts with various APIs to return a list of flowering plants. Because of this, depending on the internet connection, you may have to wait several seconds.
 APIs include:
 
-Geolocation
-CORS Anywhere
-Natural Resources Canada's Plant Hardiness Database
++ Geolocation
++ CORS Anywhere
++ Natural Resources Canada's Plant Hardiness Database
 
 Upon clicking the button, we use your IP to get your location data. At no point is your location data saved. Using the location data, we are able to use the plant hardiness
 database to return a list of plants see growing 100km away from you. We then compare this to our own database of bee-friendly flowering plants to return a list of bee-friendly
