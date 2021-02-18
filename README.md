@@ -1,12 +1,12 @@
 # Bee Blooms
 
-##What is Bee Blooms?
+## What is Bee Blooms?
 
 Bee blooms is a web app that gives you a list of flowering plants near you.
 
 Note: This only works in Canada.
 
-##Why?
+## Why?
 
 Bees are amazing creatures with huge importance to our daily lives. [About 35% of our crops are, to some extent, dependant on bees](https://geneticliteracyproject.org/2015/08/12/pollinator-myth-bees-responsible-one-third-global-food-heightening-crisis-like-7/). 
 This includes fruits like apples, melons, cranberries and strawberries. Bees also produce byproducts
@@ -17,7 +17,7 @@ face extinction, whereas in North America, more than a quarter are in decline](h
 to feed bees are gone, replaced by fields of wheat and corn covered in pesticides harmful to bees. The best thing we can do to contribute is
 plant more flowering plants, and slowly help the bees build their populations back.
 
-##How?
+## How?
 
 This app interacts with various APIs to return a list of flowering plants. Because of this, depending on the internet connection, you may have to wait several seconds.
 APIs include:
@@ -30,9 +30,9 @@ Upon clicking the button, we use your IP to get your location data. At no point 
 database to return a list of plants see growing 100km away from you. We then compare this to our own database of bee-friendly flowering plants to return a list of bee-friendly
 flowering plants near you.
 
-##Contributors:
+## Contributors:
 
-[Joshua Sheng](https://github.com/joshuasheng)
-[Catherine Huang](https://github.com/pickledturnips)
-[Yi Deng](https://github.com/beautifultimes)
++ [Joshua Sheng](https://github.com/joshuasheng)
++ [Catherine Huang](https://github.com/pickledturnips)
++ [Yi Deng](https://github.com/beautifultimes)
 
