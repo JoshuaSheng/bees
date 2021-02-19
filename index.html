@@ -96,12 +96,13 @@ function loadXMLDoc(a1, a2) {
     }
   };
 
-  var output = "https://cors-anywhere.herokuapp.com/https://beeees.herokuapp.com/getmsg/?long=";
+  var output = "https://bees-cors-proxy.herokuapp.com/https://beeees.herokuapp.com/getmsg/?long=";
   output = output.concat(lon.toString());
   output = output.concat("&lat=");
   output = output.concat(lat.toString())
   console.log(output)
   xhttp.open("GET", output, true);
+	xhttp.setRequestHeader("Access-Control-Allow-Origin", "https://beeees.herokuapp.com/");
   xhttp.send();
 }
 
